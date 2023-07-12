@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import { UserProps } from "../Types/UserType";
 import { deleteUser, getUsers, updateUserBussiness } from "../services/ApiService";
 import { toast } from "react-toastify";
-import { useNavigate, useParams } from "react-router-dom";
-
-
-
-
+import {  useParams } from "react-router-dom";
 
 
 function SandBox() {
