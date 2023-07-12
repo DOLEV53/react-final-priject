@@ -42,13 +42,14 @@ function SandBox() {
             checked
         })
             .then(json => {
+                toast.success(`The ${json.fName} has been updated successfully`, {position: toast.POSITION.TOP_RIGHT});
                 getUsers()
                   .then(json => {
                 setListUsers(json);
                 console.log(json);
                  
             }) 
-                toast.success(`The user has been updated successfully`, {position: toast.POSITION.TOP_RIGHT});
+                
         })}; 
  
 
