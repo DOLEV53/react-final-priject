@@ -6,6 +6,7 @@ router.post("/signup", users.signup);
 router.post("/login", users.login);
 
 router.get("/", users.getAllUsers);
+router.patch("/bussines/:id", users.editUserBussiness);
 router.patch("/:id", users.editUser);
 router.get("/:id", users.getUser);
 router.delete("/:id", users.deleteUser);

@@ -165,6 +165,23 @@ export async function updateUser(
     return res.json()
 }
 
+// update user bussiness - CRUD
+export async function updateUserBussiness(
+    _id: string,
+    user: UserProps
+): Promise<UserProps> {
+    const res = await fetch(`${usersUrl}bussines/${_id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+             'x-auth-token': getToken()
+        },
+        body: JSON.stringify(user)
+    })
+    return res.json()
+}
+
+
 // delete one user - CRUD
 export async function deleteUser(_id: string): Promise<UserProps> {
     const res = await fetch(`${usersUrl}${_id}`, {

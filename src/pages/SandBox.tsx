@@ -1,27 +1,26 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { UserProps } from "../Types/UserType";
-import { deleteUser, getUserById, getUsers, updateUser } from "../services/ApiService";
+import { deleteUser, getUsers, updateUserBussiness } from "../services/ApiService";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
-import { userContext } from "../App";
+
 
 
 
 
 
 function SandBox() {
-      const navigate = useNavigate();
+    
       const { id } = useParams();
       const [listUsers, setListUsers] = useState<Array<UserProps>>([]);     
       const [checked, setChecked] = useState(false);     
-       const {userData} = useContext(userContext);
+    
        useEffect(() => {
         getUsers()
             .then(json => {
                 setListUsers(json);
                 console.log(json);
-                console.log(userData?.id);
-                
+                 
             })
          }, []);
        
@@ -36,18 +35,19 @@ function SandBox() {
     // }, [id]);
         
  
- function handleChangeClick() {
-       
-         getUserById(userData?.id!)
-         console.log(userData?.id);
+ function handleChangeClick(userId: string , checked: boolean) {
+         console.log(checked);
          
-        //   enter value 
-         updateUser(userData?._id!, {
+         updateUserBussiness(userId, {
             checked
         })
             .then(json => {
-                // bring the users again after chnge their status
-                navigate('/');
+                getUsers()
+                  .then(json => {
+                setListUsers(json);
+                console.log(json);
+                 
+            }) 
                 toast.success(`The user has been updated successfully`, {position: toast.POSITION.TOP_RIGHT});
         })}; 
  
@@ -89,7 +89,7 @@ function SandBox() {
                             <td>
                                 <button
                                     className="btn btn-default ms-2"
-                                     onClick={handleChangeClick}
+                                     onClick={() => handleChangeClick(user._id as string,!user.checked)}
                                 >Change status</button>
                                 <button
                                     className="btn btn-default ms-2"

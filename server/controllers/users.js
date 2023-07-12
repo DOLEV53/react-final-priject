@@ -3,6 +3,7 @@ const joi = require("joi");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const config = require("../config/dev");
+const { log } = require("console");
 
 // create jwt
 const maxAge = 1 * 24 * 60 * 60;
@@ -175,6 +176,38 @@ module.exports = {
           _id: req.params.id,
         },
         value
+      );
+
+      if (!user) return res.status(404).send("Given ID was not found.");
+
+      const updated = await User.findOne({ _id: req.params.id });
+      res.json(updated);
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ error: "fail to update data" });
+    }
+  },
+  editUserBussiness: async function (req, res, next) {
+    try {
+      const scheme = joi.object({
+        checked: joi.boolean(),
+      });
+
+      const { error, value } = scheme.validate(req.body);
+
+      if (error) {
+        console.log(error.details[0].message);
+        res.status(400).json({ error: "invalid data" });
+        return;
+      }
+      console.log(value);
+      console.log(req.body);
+      const user = await User.findOneAndUpdate(
+        {
+          _id: req.params.id,
+        },
+        value,
+        { runValidators: false }
       );
 
       if (!user) return res.status(404).send("Given ID was not found.");
