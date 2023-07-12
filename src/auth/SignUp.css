@@ -1,0 +1,19 @@
+.div_container {
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+.main_title {
+    text-align: center;
+}
+
+.cancel {
+    text-align: center;
+    height: 30px;
+}
+
+.refresh {
+    text-align: center;
+    height: 30px;
+}

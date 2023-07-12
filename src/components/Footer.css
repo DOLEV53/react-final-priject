@@ -1,0 +1,33 @@
+
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    position: relative;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    margin-top: 50px;
+    border-top: 0.5px solid rgb(213, 208, 208);
+    background-color: gray;
+}
+
+.div_icon {
+    margin: 50px;
+}
+
+.about {
+    color: black;
+}
+
+.card_fav {
+    color: red;
+}
+
+.my_card {
+    color: black;
+}

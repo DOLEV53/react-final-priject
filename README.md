@@ -44,3 +44,22 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## About the project
+
+first, there 2 things that we didnt learn at class
+one, is how to pull google maps api
+second, to do request to the server with axios
+
+at class we do 2 project with fetch api so i do with fetch api in my project
+
+In this app you can find 4 diffrent types of users
+
+1. admin
+2. connect
+3. connect & business client
+4. everyone
+
+each diffrent user can do diffrent things at the app
+
+Generaly this app create & present businees cards of diffrent buisnesses & give information about each one.

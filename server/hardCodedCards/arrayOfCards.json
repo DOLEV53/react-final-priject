@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Flower Store",
+    "subtitle": "Your Local Florist",
+    "description": "We offer a wide variety of fresh flowers and floral arrangements for all occasions.",
+    "phone": "0528888123",
+    "email": "info@flowerstore.com",
+    "web": "https://www.flowerstore.com",
+    "imageUrl":  "https://www.regency-ltd.com/wp-content/uploads/2020/10/unnamed-1.jpg",
+      "imageAlt": "Flower Store",
+      "state": "California",
+      "country": "United States",
+      "city": "Los Angeles",
+      "street": "Main Street",
+      "houseNumber": "123",
+      "zip": "90001"
+    
+  },
+  {
+    "title": "Gym Place",
+    "subtitle": "Get Fit and Stay Healthy",
+    "description": "We provide state-of-the-art fitness equipment, personal training, and group exercise classes.",
+    "phone": "0546662221",
+    "email": "info@gymplace.com",
+    "web": "https://www.gymplace.com",
+    "imageUrl":  "https://www.weizmann.ac.il/fitness-center/sites/fitness-center/files/2022-06/DSCF3918.jpg",
+    "imageAlt": "Gym Place",
+      "state": "New York",
+      "country": "United States",
+      "city": "New York City",
+      "street": "Broadway",
+      "houseNumber": "456",
+      "zip": "10001"
+  },
+  {
+    "title": "Supermarket",
+    "subtitle": "Your One-Stop Shop",
+    "description": "We offer a wide range of groceries, fresh produce, household items, and more.",
+    "phone": "0558080112",
+    "email": "info@supermarket.com",
+    "web": "https://www.supermarket.com",
+    "imageUrl": "https://ronyb-design.co.il/wp-content/uploads/2021/02/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%A4%D7%A0%D7%99%D7%9D-%D7%9C%D7%A1%D7%95%D7%A4%D7%A8%D7%9E%D7%A8%D7%A7%D7%98%D7%99%D7%9D-1.jpg",
+      "imageAlt": "Supermarket",
+     "state": "Texas",
+      "country": "United States",
+      "city": "Houston",
+      "street": "Main Street",
+      "houseNumber": "789",
+      "zip": "77001"
+    
+  }
+]
