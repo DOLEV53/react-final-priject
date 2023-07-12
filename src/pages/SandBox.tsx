@@ -25,16 +25,6 @@ function SandBox() {
          }, []);
        
 
-    // useEffect(() => {
-    //       getUserById(id!)
-    //         .then(json => {
-    //             setChecked(json.checked!)
-    //             console.log(id);
-                
-    //           })
-    // }, [id]);
-        
- 
  function handleChangeClick(userId: string , checked: boolean) {
          console.log(checked);
          
@@ -42,12 +32,10 @@ function SandBox() {
             checked
         })
             .then(json => {
-                toast.success(`The ${json.fName} has been updated successfully`, {position: toast.POSITION.TOP_RIGHT});
+                toast.success(`The ${json.fName}  ${json.lName} has been updated successfully`, {position: toast.POSITION.TOP_RIGHT});
                 getUsers()
                   .then(json => {
                 setListUsers(json);
-                console.log(json);
-                 
             }) 
                 
         })}; 
@@ -62,8 +50,6 @@ function SandBox() {
        toast.success('User has been deleted');
     }
 
-
-    
     return ( 
        <>
        <table className='table table-hover'>

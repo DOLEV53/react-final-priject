@@ -200,8 +200,6 @@ module.exports = {
         res.status(400).json({ error: "invalid data" });
         return;
       }
-      console.log(value);
-      console.log(req.body);
       const user = await User.findOneAndUpdate(
         {
           _id: req.params.id,
