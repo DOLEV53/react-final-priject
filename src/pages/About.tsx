@@ -6,7 +6,7 @@ function About() {
       <>
        <Title
          mainText="ABOUT PAGE"
-         subText="Welcome to Bcard"
+         subText="Welcome to Bcard" 
         />
 <div className="container">
     

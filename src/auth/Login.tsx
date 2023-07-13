@@ -74,16 +74,16 @@ function Login() {
            </div>
 
         <div className="d-flex pb-2">
-              <input
-                className="form-control mx-3 cancel "
-                placeholder="CANCEL"
+              <button
+                className="form-control p-0 mx-3 cancel "
                 onClick={handleBack}
-              />
-              <div 
-               className="form-control mx-3 refresh"
+              >CANCEL
+              </button>
+              <button 
+               className="form-control p-0 mx-3 refresh"
                onClick={handleClean}
                ><i className="bi bi-arrow-repeat"></i>
-            </div>
+            </button>
         </div>  
             
             <div className="d-flex pb-3">

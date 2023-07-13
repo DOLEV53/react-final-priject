@@ -69,7 +69,6 @@ function EditUser() {
             houseNumber,
             zip,
             checked,
-
         })
             .then(json => {
                 navigate('/');
@@ -97,119 +96,88 @@ function EditUser() {
     function handleBack() {
         navigate('/')
     };
+
     return ( 
          <>
         <Title  
            mainText="Update user" subText="Here you can update your personal details" />
-
         <div className="  p-4 align-items-center div_container">
         <div className="d-flex pb-2">
+            <input 
+            className="form-control mx-3" type="text" placeholder="First name *" value={fName}
+            onChange={(e) => setFname(e.target.value)}  />
             <input
-                className="form-control mx-3"
-                type="text" placeholder="First name *"
-                value={fName}
-                onChange={(e) => setFname(e.target.value)}  />
-            <input
-                className="form-control mx-3"
-                type="text" placeholder="Middle name *"
-                value={mName}
+                className="form-control mx-3" type="text" placeholder="Middle name *" value={mName}
                 onChange={(e) => setMname(e.target.value)} />
-         </div>
+        </div>
           <div className="d-flex pb-2">  
             <input
-                className="form-control mx-3"
-                type="text" placeholder="Last name *"
-                value={lName}
+                className="form-control mx-3" type="text" placeholder="Last name *" value={lName}
                 onChange={(e) => setLname(e.target.value)} />
             <input
-                className="form-control mx-3"
-                type="text" placeholder="050-00000000 *"
-                value={phone}
+                className="form-control mx-3"  type="text" placeholder="050-00000000 *" value={phone}
                 onChange={(e) => setPhone(e.target.value)} />
         </div>
         <div className="d-flex pb-2">
             <input
-                className="form-control mx-3"
-                type="email" placeholder="test@gmail.com *"
-                value={email}
+                className="form-control mx-3" type="email" placeholder="test@gmail.com *" value={email}
                 onChange={(e) => setEmail(e.target.value)} />
             <input
-                className="form-control mx-3"
-                type="text" placeholder="can't change password here *" readOnly
-                value={password}
+                className="form-control mx-3"  type="text" placeholder="can't change password here *" readOnly value={password}
                 onChange={(e) => setPassword(e.target.value)}  />
         </div>
         <div className="d-flex pb-2">
             <input
-                className="form-control mx-3"
-                type="text" placeholder="Image url *"
-                value={imageUrl}
+                className="form-control mx-3"  type="text" placeholder="Image url *"  value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)} />
             <input
-                className="form-control mx-3"
-                type="text" placeholder="Image alt *"
-                value={imageAlt}
+                className="form-control mx-3"  type="text" placeholder="Image alt *"  value={imageAlt}
                 onChange={(e) => setImageAlt(e.target.value)} />
             </div>
             <div className="d-flex pb-2">
             <input
-                className="form-control mx-3"
-                type="text" placeholder="State *"
-                value={state}
+                className="form-control mx-3" type="text" placeholder="State *" value={state}
                 onChange={(e) => setState(e.target.value)} />
             <input
-                className="form-control mx-3"
-                type="text" placeholder="Country *"
-                value={country}
+                className="form-control mx-3" type="text" placeholder="Country *" value={country}
                 onChange={(e) => setCountry(e.target.value)} />
             </div>
             <div className="d-flex pb-2">
             <input
-                className="form-control mx-3"
-                type="text" placeholder="City *"
-                value={city}
+                className="form-control mx-3" type="text" placeholder="City *" value={city}
                 onChange={(e) => setCity(e.target.value)} />
             <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Street *"
-                value={street}
+                className="form-control mx-3" type="text" placeholder="Street *" value={street}
                 onChange={(e) => setStreet(e.target.value)} />
             </div>
             <div className="d-flex pb-2">
             <input
-                className="form-control mx-3"
-                type="text" placeholder="House number *"
-                value={houseNumber}
+                className="form-control mx-3" type="text" placeholder="House number *" value={houseNumber}
                 onChange={(e) => setHouseNumber(e.target.value)} />
             <input
-                className="form-control mx-3"
-                type="text" placeholder="Zip *"
-                value={zip}
+                className="form-control mx-3" type="text" placeholder="Zip *" value={zip}
                 onChange={(e) => setZip(e.target.value)} />
             </div>
  <div className="mb-3 mx-3">
  <div className="form-check">
     <input 
-     className="form-check-input" 
-     type="checkbox"
-     defaultChecked={checked}
+     className="form-check-input"  type="checkbox" defaultChecked={checked}
      onChange={() => setChecked(!checked)}  />
-  <label className="form-check-label" >
+    <label className="form-check-label" >
     Signup as business 
-  </label>
+    </label>
  </div>
 </div>
              <div className="d-flex pb-2">
-              <input
-                className="form-control mx-3 cancel " 
-                placeholder="CANCEL"
-                onClick={handleBack} />
-              <div 
-               className="form-control mx-3 refresh"
-               onClick={handleClean} >
+              <button
+                className="form-control p-0 mx-3 cancel"  type="button"
+                onClick={handleBack}>CANCEL
+                </button>    
+              <button 
+               className="form-control p-0 mx-3 refresh"
+               onClick={handleClean}>
               <i className="bi bi-arrow-repeat"></i>
-            </div>
+            </button>
             </div>
             <div className="d-flex pb-3">
             <input

@@ -42,7 +42,7 @@ function FavCards() {
         
         <div className='d-flex'>
                 {
-                    !list || list.length === 0 && <div className="align-items-center">No business cards was found</div>
+                    !list || list.length === 0 && <div className="mx-3 fw-bold">No favorite business cards was chosen</div>
                 }
                 {list &&
                     list.map(cardItem =>

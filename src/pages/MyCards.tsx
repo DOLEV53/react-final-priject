@@ -66,7 +66,7 @@ function MyCards() {
 
         <div className='d-flex'>
                 {
-                    !list || list.length === 0 && <div className="align-items-center">No business cards was found</div>
+                    !list || list.length === 0 && <div className="mx-3 fw-bold">No business cards was created</div>
                 }
                 {list &&
                     list.map(cardItem =>

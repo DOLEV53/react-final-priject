@@ -176,15 +176,15 @@ function AddCard() {
                 onChange={(e) => setZip(e.target.value)} />
             </div>
              <div className="d-flex pb-2">
-              <input
-                className="form-control mx-3 cancel "
-                placeholder="CANCEL"
-                onClick={handleBack} />
-              <div 
-               className="form-control mx-3 refresh"
+              <button
+                className="form-control p-0 mx-3 cancel "
+                onClick={handleBack}>CANCEL
+                </button>
+              <button 
+               className="form-control p-0 mx-3 refresh"
                onClick={handleClean}>
             <i className="bi bi-arrow-repeat"></i>
-             </div>
+             </button>
             </div>
              <div className="d-flex pb-3">
              <input

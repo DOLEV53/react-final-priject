@@ -3,6 +3,7 @@ import { UserProps } from "../Types/UserType";
 import { deleteUser, getUsers, updateUserBussiness } from "../services/ApiService";
 import { toast } from "react-toastify";
 import {  useParams } from "react-router-dom";
+import Title from "../components/Title";
 
 
 function SandBox() {
@@ -15,8 +16,7 @@ function SandBox() {
         getUsers()
             .then(json => {
                 setListUsers(json);
-                console.log(json);
-                 
+                console.log(json);    
             })
          }, []);
        
@@ -48,7 +48,11 @@ function SandBox() {
 
     return ( 
        <>
-       <table className='table table-hover'>
+
+       <Title 
+         mainText="Manage users"
+       />
+       <table className='table table-hover mt-5'>
                 <thead>
                     <tr>
                         <th>User first name</th>
