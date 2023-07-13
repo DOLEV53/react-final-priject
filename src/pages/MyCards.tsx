@@ -54,7 +54,7 @@ function MyCards() {
          <>
         <Title
                 mainText="My Cards"
-                subText="Here you can find all business cards that you make"
+                subText="Here you can find all your business cards that you make"
             />
 
         <input 

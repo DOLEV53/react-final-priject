@@ -68,13 +68,13 @@ function Bcard({_id}: UserProps) {
                 mainText="Cards Page"
                 subText="Here you can find business cards from all categories"
             />
-
+           
         <input 
                         className="nav-item mx-3 mb-4"
-                        placeholder="Search..."
+                        placeholder=" Search..."
                         value={search}
                         onChange={handleSearch}
-                    />    
+                    />   
 
         <div className='d-flex'>
                 {

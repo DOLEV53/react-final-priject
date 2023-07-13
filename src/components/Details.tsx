@@ -180,7 +180,7 @@ function Details() {
               <button
                 className="form-control mx-3 p-0 cancel bg-primary"
                 type='button'
-                onClick={handleBack}>CANCEL
+                onClick={handleBack}>BACK
               </button>
             </div>
         </div>

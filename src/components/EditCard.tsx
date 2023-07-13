@@ -94,7 +94,7 @@ function EditCard() {
 
     return ( 
        <>
-         <Title  mainText="EDIT CARD" />
+         <Title  mainText="UPDATE BUSINESS CARD" />
          <div className="  p-4 align-items-center div_container">
          <p className="mx-3 mb-1">Title* <span className="span_1">Subtitle*</span></p>
          <div className="d-flex pb-2">
