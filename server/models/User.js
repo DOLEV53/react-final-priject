@@ -66,6 +66,14 @@ const userSchema = new mongoose.Schema({
     type: String,
   },
   favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Card" }],
+  loginAttempts: {
+    type: Number,
+    default: 0,
+  },
+  // blocked: {
+  //   type: Boolean,
+  //   default: false,
+  // },
 });
 
 const User = mongoose.model("User", userSchema);

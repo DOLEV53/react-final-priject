@@ -49,141 +49,35 @@ function Details() {
 
     return ( 
        <>
+         <div className='text-center mt-5 fs-1 fw-bolder text-danger-emphasis'>Welcome to {title} </div>
+         <div className='text-center  fs-3 fw-bolder text-danger-emphasis'>{subtitle}</div>
+
          <Title 
-                mainText="DETAILS"
-         />
-        <div className="  p-4 align-items-center div_container">
-         <p className="mx-3 mb-1">Title* <span className="span_1">Subtitle*</span></p>
-         <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"
-                type="title"
-                placeholder="Title *"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                id="title"
-                readOnly  />
-             <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Subtitle *"
-                value={subtitle}
-                onChange={(e) => setSubtitle(e.target.value)}
-                id='subtitle'
-                readOnly />
+                mainText=''
+               
+        />
+
+        <div className='mt-4 mx-3 text-warning-emphasis fs-4 text-center'>{description}</div>
+         
+        <div className='text-center mt-5'>
+        <img className='img justify-content-center' src={imageUrl} alt={imageAlt} />
+        </div> 
+        <div className='text-center'>
+        <div className=' text-warning-emphasis mt-5 mx-5 fs-3'>Contact us</div>
+        <div className='mx-5'>Email: {email}</div>
+        <div className='mx-5'>Phone: {phone}</div>
+        <div className='mx-5'>Web site: {web}</div>
         </div>
-        <p className="mx-3 mb-1">Description* <span className="span_2">Phone*</span></p>
-        <div className="d-flex pb-2">
-          <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Description *"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                readOnly   />
-          <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Phone *"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                readOnly />
+        
+        <div className='text-center'>
+        <div className=' text-warning-emphasis mt-5 mx-5 fs-3'>How to find us?</div>
+        <div className='mx-5 text-warning-emphasis'>Our business locaated in:</div>
+        <div className='mx-5'>{country},</div>
+        <div className='mx-5'>{state}, {city}</div>
+        <div className='mx-5'>{street} {houseNumber}</div>
+        <div className='mx-5'>zip code: {zip}</div>
         </div>
-        <p className="mx-3 mb-1">Email* <span className="span_3">Web</span></p>
-        <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"
-                type="email"
-                placeholder="Email *"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                readOnly  />
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Web"
-                value={web}
-                onChange={(e) => setWeb(e.target.value)}
-                readOnly
-            />
-        </div>
-        <p className="mx-3 mb-1">Image Url <span className="span_4">Image Alt</span></p>
-        <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Image url"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-                readOnly  />
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Image alt"
-                value={imageAlt}
-                onChange={(e) => setImageAlt(e.target.value)}
-                readOnly />
-            </div>
-            <p className="mx-3 mb-1">State* <span className="span_5">Country*</span></p>
-            <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="State"
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                readOnly />
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Country *"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                readOnly
-            />
-            </div>
-             <p className="mx-3 mb-1">City* <span className="span_6">Street*</span></p>
-            <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="City *"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                readOnly  />
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Street *"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-                readOnly />
-            </div>
-             <p className="mx-3 mb-1">House Number* <span className="span_7">Zip</span></p>
-            <div className="d-flex pb-3">
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="House number *"
-                value={houseNumber}
-                onChange={(e) => setHouseNumber(e.target.value)}
-                readOnly />
-            <input
-                className="form-control mx-3"
-                type="text"
-                placeholder="Zip"
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}
-                readOnly />
-            </div>
-            <div className="d-flex pb-2">
-              <button
-                className="form-control mx-3 p-0 cancel bg-primary"
-                type='button'
-                onClick={handleBack}>BACK
-              </button>
-            </div>
-        </div>
+        
       </>  
      );
 }

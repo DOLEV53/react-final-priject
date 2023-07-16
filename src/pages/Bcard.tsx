@@ -25,7 +25,6 @@ function Bcard({_id}: UserProps) {
             .then(json => {
                 setList(json);
                 setCards(json);
-                console.log(json);
                 
             })
     }, []);

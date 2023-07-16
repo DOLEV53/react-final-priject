@@ -14,12 +14,13 @@ export interface Props {
 
 function FavCards() {
      const [list, setList] = useState<Array<CardProps>>([]);
-     
+     const [search, setSearch] = useState('');
+  
 
     useEffect(() => {
         getUserFavoriteCard()
             .then(json => {
-                setList(json.favoriteCards);  
+                setList(json.favoriteCards);   
             })
     }, []);
 
@@ -33,12 +34,30 @@ function FavCards() {
         toast.success('Card has been deleted');
     } 
 
+    function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
+        const value = e.target.value;
+        setSearch(value);
+        const normalizedValue = value.trim().toLowerCase();
+        const filtered: Array<CardProps> = list.filter(
+           cardItem => cardItem.title.toLowerCase().includes(normalizedValue)
+         );
+        setList(filtered); 
+    }
+
     return ( 
          <>
         <Title
                 mainText="My Favorites Business Cards"
                 subText="Here you can find all your favorites business cards"
             />
+
+
+        <input 
+                        className="nav-item mx-3 mb-4"
+                        placeholder=" Search..."
+                        value={search}
+                        onChange={handleSearch}
+                    />       
         
         <div className='d-flex'>
                 {

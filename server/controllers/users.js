@@ -3,7 +3,6 @@ const joi = require("joi");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const config = require("../config/dev");
-const { log } = require("console");
 
 // create jwt
 const maxAge = 1 * 24 * 60 * 60;
@@ -45,6 +44,12 @@ module.exports = {
         isAdmin: user.isAdmin,
         checked: user.checked,
       });
+      //bloced user
+      // if (user) {
+      //   user.loginAttempts = 0;
+      //   await user.save();
+      // }
+      // res.json({ message: "Login successful" });
     } catch (err) {
       console.log(err);
       res.status(400).send("Invalid data.");
@@ -238,4 +243,32 @@ module.exports = {
       res.status(400).json({ error: "error delete user" });
     }
   },
+  //blocked user
+  // blockedUser: async function (req, res, next) {
+  //   try {
+  //     const username = req.body.fName;
+  //     const user = await User.findOne({ username });
+  //     if (!user) {
+  //       return res.status(401).json({ message: "Invalid credentials" });
+  //     }
+  //     if (user.blocked) {
+  //       return res.status(403).json({ message: "User is blocked" });
+  //     }
+  //     if (user.loginAttempts >= 3) {
+  //       // Block the user
+  //       user.blocked = true;
+  //       await user.save();
+
+  //       return res
+  //         .status(403)
+  //         .json({ message: "Too many login attempts. User blocked" });
+  //     }
+  //     user.loginAttempts++;
+  //     await user.save();
+  //     next();
+  //   } catch (err) {
+  //     console.log(err);
+  //     res.status(500).json({ error: "Server error" });
+  //   }
+  // },
 };
