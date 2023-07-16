@@ -15,12 +15,13 @@ export interface Props {
 function FavCards() {
      const [list, setList] = useState<Array<CardProps>>([]);
      const [search, setSearch] = useState('');
-  
+     const [cards, setCards] = useState([...list]);
 
     useEffect(() => {
         getUserFavoriteCard()
             .then(json => {
-                setList(json.favoriteCards);   
+                setList(json.favoriteCards); 
+                 setCards(json.favoriteCards);  
             })
     }, []);
 
@@ -38,7 +39,7 @@ function FavCards() {
         const value = e.target.value;
         setSearch(value);
         const normalizedValue = value.trim().toLowerCase();
-        const filtered: Array<CardProps> = list.filter(
+        const filtered: Array<CardProps> = cards.filter(
            cardItem => cardItem.title.toLowerCase().includes(normalizedValue)
          );
         setList(filtered); 

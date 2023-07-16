@@ -23,7 +23,8 @@ import { isValidEmail, isValidImageUrl, isValidIsraeliPhoneNumber, isValidPasswo
     token?: string | undefined;
     isAdmin?: boolean;
     checked?: boolean;
-   
+    status?: string | null;
+    message?: string | null;
 }
 
  function validate(user: UserProps): boolean {

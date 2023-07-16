@@ -6,6 +6,7 @@ import Title from '../components/Title';
 import { setToken, setUser } from './TokenManager';
 import { validate_2 } from '../Types/UserType';
 import { userContext } from '../App';
+import { toast } from 'react-toastify';
 
 
 
@@ -35,10 +36,13 @@ function Login() {
             password
         })
             .then((user) => {
+                if (user.status === "fail") {
+                    toast.error(user.message)
+                    return 
+                } 
+                 
                  setToken(user.token)
                  setUser(user)
-                 console.log(user);
-                 
                  setUserData(user)
                  navigate('/')
                 

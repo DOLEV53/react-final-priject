@@ -31,11 +31,14 @@ module.exports = {
       const user = await User.findOne({ email: value.email });
       if (!user) throw Error;
       const validPassword = await bcrypt.compare(value.password, user.password);
-      if (!validPassword) throw "Invalid password";
+      if (!validPassword) throw "invalid password";
 
       const token = createToken(user._id, user.checked, user.isAdmin);
-      res.cookie("jwt", token, { maxAge: maxAge * 1000 });
-
+      //bloced user
+      if (user) {
+        user.loginAttempts = 0;
+        await user.save();
+      }
       res.json({
         token: token,
         id: user._id,
@@ -44,12 +47,6 @@ module.exports = {
         isAdmin: user.isAdmin,
         checked: user.checked,
       });
-      //bloced user
-      // if (user) {
-      //   user.loginAttempts = 0;
-      //   await user.save();
-      // }
-      // res.json({ message: "Login successful" });
     } catch (err) {
       console.log(err);
       res.status(400).send("Invalid data.");
@@ -243,32 +240,39 @@ module.exports = {
       res.status(400).json({ error: "error delete user" });
     }
   },
-  //blocked user
-  // blockedUser: async function (req, res, next) {
-  //   try {
-  //     const username = req.body.fName;
-  //     const user = await User.findOne({ username });
-  //     if (!user) {
-  //       return res.status(401).json({ message: "Invalid credentials" });
-  //     }
-  //     if (user.blocked) {
-  //       return res.status(403).json({ message: "User is blocked" });
-  //     }
-  //     if (user.loginAttempts >= 3) {
-  //       // Block the user
-  //       user.blocked = true;
-  //       await user.save();
+  // blocked user
+  blockedUser: async function (req, res, next) {
+    try {
+      console.log(req.body);
+      const userEmail = req.body.email;
+      const user = await User.findOne({ email: userEmail });
+      console.log(user);
+      if (!user) {
+        return res
+          .status(401)
+          .json({ status: "fail", message: "Invalid credentials" });
+      }
+      if (user.blocked) {
+        return res
+          .status(403)
+          .json({ status: "fail", message: "User is blocked" });
+      }
+      if (user.loginAttempts >= 3) {
+        // Block the user
+        user.blocked = true;
+        await user.save();
 
-  //       return res
-  //         .status(403)
-  //         .json({ message: "Too many login attempts. User blocked" });
-  //     }
-  //     user.loginAttempts++;
-  //     await user.save();
-  //     next();
-  //   } catch (err) {
-  //     console.log(err);
-  //     res.status(500).json({ error: "Server error" });
-  //   }
-  // },
+        return res.status(403).json({
+          status: "fail",
+          message: "Too many login attempts. User blocked",
+        });
+      }
+      user.loginAttempts++;
+      await user.save();
+      next();
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ error: "Server error" });
+    }
+  },
 };
