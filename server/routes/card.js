@@ -9,6 +9,6 @@ router.get("/myCards", auth, cards.getMyCards);
 router.get("/getUserFavoriteCards", auth, cards.getUserFavoriteCards);
 router.patch("/:id", auth, cards.edit);
 router.delete("/:id", auth, cards.delete);
-router.get("/:id", auth, cards.getItem);
+router.get("/:id", cards.getItem);
 router.put("/:id/favorite", auth, cards.setFavorite);
 module.exports = router;
