@@ -74,6 +74,7 @@ import { userContext } from "../App";
                                 >
                                     <i className="bi bi-eye-fill"></i>
                                 </Link>
+                                { userData?.checked || userData?.isAdmin ?
                                 <button
                                 className="btn btn-default"
                                 onClick={() => {toggleFavoriteCard(_id)
@@ -81,7 +82,8 @@ import { userContext } from "../App";
                                 }}
                                >
                                 <i style={{ color: changeColorHeart ? "red" :" "}} className="bi bi-heart-fill bi_heart"></i>
-                               </button>
+                               </button> : <span></span>
+                               }
                             </span>
                             }
                 

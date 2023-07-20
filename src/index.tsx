@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
  import 'react-toastify/dist/ReactToastify.min.css';
 import { BrowserRouter } from 'react-router-dom';
-import { UserProps } from './Types/UserType';
-import { createContext } from 'react';
+
+
 
 
 
