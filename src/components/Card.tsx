@@ -74,7 +74,7 @@ import { userContext } from "../App";
                                 >
                                     <i className="bi bi-eye-fill"></i>
                                 </Link>
-                                { userData?.checked || userData?.isAdmin ?
+                                {userData?.token || userData?.checked || userData?.isAdmin ?
                                 <button
                                 className="btn btn-default"
                                 onClick={() => {toggleFavoriteCard(_id)
