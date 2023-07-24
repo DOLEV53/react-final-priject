@@ -76,7 +76,7 @@ import { validate } from '../Types/UserType';
     return ( 
         <>
         <Title  
-           mainText="REGISTER" />
+           mainText="SIGN UP" />
 
         <div className="  p-4 align-items-center div_container">
         <div className="d-flex pb-2">

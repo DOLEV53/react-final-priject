@@ -95,94 +95,87 @@ function EditCard() {
     return ( 
        <>
          <Title  mainText="UPDATE BUSINESS CARD" />
-         <div className="  p-4 align-items-center div_container">
-         <p className="mx-3 mb-1">Title* <span className="span_1">Subtitle*</span></p>
-         <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3" type="title" placeholder="Title *"   id="title" 
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}  />
-            <input
-                className="form-control mx-3"  type="text" placeholder="Subtitle *" id='subtitle'
-                value={subtitle}
-                onChange={(e) => setSubtitle(e.target.value)} />
+        <div className="p-4   div_container">
+          <div className="row g-3  div_input">
+            <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">Title*</label>   
+            <input className="form-control mx-5" type="title" placeholder="Title *"   id="title" 
+                value={title} onChange={(e) => setTitle(e.target.value)}/> </div>
+            <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">Subtitle*</label> 
+            <input className="form-control mx-5"  type="text" placeholder="Subtitle *" id='subtitle'
+                value={subtitle} onChange={(e) => setSubtitle(e.target.value)}/> </div>
         </div>
-        <p className="mx-3 mb-1">Description* <span className="span_2">Phone*</span></p>
-        <div className="d-flex pb-2">
-           <input
-                className="form-control mx-3" type="text" placeholder="Description *"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)} />
-            <input
-                className="form-control mx-3"  type="text" placeholder="Phone *"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}  />
+        <div className="row g-3 div_input">
+          <div className="col-auto ">
+           <label  className="form-label mb-0 mx-5">Description*</label> 
+           <input className="form-control mx-5" type="text" placeholder="Description *"
+                value={description} onChange={(e) => setDescription(e.target.value)} /></div>
+            <div className="col-auto ">
+             <label  className="form-label mb-0 mx-5">Phone*</label>        
+            <input className="form-control mx-5"  type="text" placeholder="Phone *"
+                value={phone} onChange={(e) => setPhone(e.target.value)}  /></div>
         </div>
-        <p className="mx-3 mb-1">Email* <span className="span_3">Web</span></p>
-        <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"  type="email"  placeholder="Email *"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} />
-            <input
-                className="form-control mx-3" type="text"  placeholder="Web"
-                value={web}
-                onChange={(e) => setWeb(e.target.value)} />
+        <div className="row g-3 div_input">
+            <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">Email*</label>   
+            <input className="form-control mx-5"  type="email"  placeholder="Email *"
+                value={email} onChange={(e) => setEmail(e.target.value)} /></div>
+             <div className="col-auto ">   
+            <label  className="form-label mb-0 mx-5">Web*</label>    
+            <input className="form-control mx-5" type="text"  placeholder="Web"
+                value={web} onChange={(e) => setWeb(e.target.value)} /></div>
         </div>
-        <p className="mx-3 mb-1">Image Url <span className="span_4">Image Alt</span></p>
-        <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3" type="text"  placeholder="Image url"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}  />
-            <input
-                className="form-control mx-3" type="text"  placeholder="Image alt"
-                value={imageAlt}
-                onChange={(e) => setImageAlt(e.target.value)} />
+        <div className="row g-3 div_input">
+            <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">Image Url*</label>   
+            <input className="form-control mx-5" type="text"  placeholder="Image url"
+                value={imageUrl}  onChange={(e) => setImageUrl(e.target.value)} /></div>
+            <div className="col-auto ">
+             <label  className="form-label mb-0 mx-5">Image Alt*</label>      
+            <input className="form-control mx-5" type="text"  placeholder="Image alt"
+                value={imageAlt}  onChange={(e) => setImageAlt(e.target.value)} /></div> 
             </div>
-            <p className="mx-3 mb-1">State* <span className="span_5">Country*</span></p>
-            <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"  type="text"  placeholder="State"
-                value={state}
-                onChange={(e) => setState(e.target.value)} />
-            <input
-                className="form-control mx-3" type="text" placeholder="Country *"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)} />
+            <div className="row g-3 div_input">
+             <div className="col-auto ">
+              <label  className="form-label mb-0 mx-5">State*</label>     
+            <input className="form-control mx-5"  type="text"  placeholder="State"
+                value={state} onChange={(e) => setState(e.target.value)} /></div>
+            <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">Country*</label>     
+            <input className="form-control mx-5" type="text" placeholder="Country *"
+                value={country}  onChange={(e) => setCountry(e.target.value)} /> </div>
             </div>
-             <p className="mx-3 mb-1">City* <span className="span_6">Street*</span></p>
-            <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3" type="text"  placeholder="City *"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}  />
-            <input
-                className="form-control mx-3" type="text"  placeholder="Street *"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)} />
+            <div className="row g-3 div_input">
+             <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">City*</label>    
+            <input className="form-control mx-5" type="text"  placeholder="City *"
+                value={city} onChange={(e) => setCity(e.target.value)}  /></div>
+            <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">Street*</label>     
+            <input className="form-control mx-5" type="text"  placeholder="Street *"
+                value={street}  onChange={(e) => setStreet(e.target.value)} /></div>
             </div>
-             <p className="mx-3 mb-1">House Number* <span className="span_7">Zip</span></p>
-            <div className="d-flex pb-2">
-            <input
-                className="form-control mx-3"  type="text" placeholder="House number *"
-                value={houseNumber}
-                onChange={(e) => setHouseNumber(e.target.value)}  />
-            <input
-                className="form-control mx-3"  type="text" placeholder="Zip"
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}  />
+            <div className="row g-3 div_input">
+             <div className="col-auto ">
+            <label  className="form-label mb-0 mx-5">House Number*</label>    
+            <input className="form-control mx-5"  type="text" placeholder="House number *"
+                value={houseNumber}  onChange={(e) => setHouseNumber(e.target.value)}  /></div>
+            <div className="col-auto ">
+             <label  className="form-label mb-0 mx-5">Zip*</label>   
+            <input className="form-control mb-3 mx-5"  type="text" placeholder="Zip"
+                value={zip}  onChange={(e) => setZip(e.target.value)}  /> </div>
             </div>
-            <div className="d-flex pb-3">
-              <button className="form-control mx-3 p-0 cancel " type='button'
+            <div className="d-flex mini_continer">
+              <button  className="form-control mx-3  p-0 cancel " 
                 onClick={handleBack}>CANCEL
-              </button>
-              <button type="button"   className="form-control mx-3 p-0 refresh"
+              </button> 
+              <button  className="form-control p-0 refresh"
                onClick={handleClean}>
                <i className="bi bi-arrow-repeat"></i>
               </button>
               </div>
-              <div className="d-flex pb-3">
+              <div className="update">
             <input
                 className="btn btn-primary form-control mx-3" placeholder="UPDATE"
                 onClick={handleClick} />

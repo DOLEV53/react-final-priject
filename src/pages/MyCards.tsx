@@ -84,7 +84,7 @@ function MyCards() {
       
 
         { userData?.checked || userData?.isAdmin ?
-        <button className="btn_plus bg-primary text-light ">
+        <button className="btn_plus success">
                                 <Link to="/addCard" className="nav-link ">
                                    <i className="bi bi-plus"></i>
                                 </Link>

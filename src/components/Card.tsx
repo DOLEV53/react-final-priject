@@ -76,7 +76,7 @@ import { userContext } from "../App";
                                 </Link>
                                 {userData?.token || userData?.checked || userData?.isAdmin ?
                                 <button
-                                className="btn btn-default"
+                                className="btn btn-defult ms-5 "
                                 onClick={() => {toggleFavoriteCard(_id)
                                                 toggleRedColor()
                                 }}

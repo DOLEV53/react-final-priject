@@ -1,39 +1,33 @@
 .div_container {
-    width: 60%;
-    margin: 0 auto;
-    
-
+width: 800px;
+margin: 0 auto;
 }
+
 .main_title {
     text-align: center;
+}
+.mini_continer {
+    width: 636px;
+    margin-left: 33px;
 }
 .cancel {
     text-align: center;
     height: 30px;
-    
+    width: 300px;
 }
+
 .refresh {
     text-align: center;
     height: 30px;
 }
-.span_1 {
-  margin-left: 24.5rem;
+.div_input {
+   padding-top: 10px;
 }
-.span_2 {
-    margin-left: 21.5rem;
-}
-.span_3 {
-    margin-left: 24rem;
-}
-.span_4 {
-    margin-left: 22.5rem;
-}
-.span_5 {
-    margin-left: 24.1rem;
-}
-.span_6 {
-    margin-left: 24.7rem;
-}
-.span_7 {
-    margin-left: 19.8rem;
+
+.update {
+    padding-top: 20px;
+    width: 150px;
+   margin-left: 270px;
+   
+    
 }

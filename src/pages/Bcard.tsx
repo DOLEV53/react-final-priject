@@ -58,7 +58,7 @@ function Bcard({_id}: UserProps) {
                                     
                                     className="btn btn-default"
                                 >
-                                <button className="btn btn-link text-secondary  user_btn">Updating personal information</button>
+                                <button className="btn btn-link text-secondary">Updating personal information</button>
                                 </Link> : <span></span>
                               
                                 }    
@@ -95,7 +95,7 @@ function Bcard({_id}: UserProps) {
       
 
          { userData?.checked || userData?.isAdmin ?
-        <button className=" btn_plus bg-primary text-light ">
+        <button className=" btn_plus mt-4  success ">
                                 <Link to="/addCard" className="nav-link ">
                                    <i className="bi bi-plus"></i>
                                 </Link>
